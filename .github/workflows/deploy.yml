@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ] # Якщо ваша головна гілка називається main, змініть master на main
-
+    branches: [ master ]
 permissions:
   contents: write
 
