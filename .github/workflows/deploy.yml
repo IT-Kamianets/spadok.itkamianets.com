@@ -2,41 +2,67 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
-permissions:
-  contents: write
+    branches:
+      - master
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i --include=optional --legacy-peer-deps
+
+      - name: Rebuild lightningcss
+        run: npm rebuild lightningcss
 
       - name: Build Angular app
+        # Додано --base-href / для правильної роботи з власним доменом
         run: npm run build -- --base-href /
 
       - name: Add .nojekyll file
+        # Необхідно, щоб GitHub Pages не ігнорував файли Angular
         run: touch dist/Spadok/browser/.nojekyll
 
       - name: Create CNAME file automatically
+        # Автоматично генеруємо файл з вашим доменом
         run: echo "spadok.itkamianets.com" > dist/Spadok/browser/CNAME
 
       - name: Copy index.html to 404.html (for SPA routing)
+        # Дозволяє прямі переходи за посиланнями без помилки 404
         run: cp dist/Spadok/browser/index.html dist/Spadok/browser/404.html
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/Spadok/browser
-          branch: gh-pages
+      - name: Set up SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Commit and push to gh-pages using SSH
+        env:
+          GIT_SSH_COMMAND: 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          cd dist/Spadok/browser
+          git init  # Initialize a new git repository
+          git add --all .  # Add all changes
+          git commit -m "Deploy to GitHub Pages"
+          git checkout -B gh-pages  # Switch to gh-pages branch
+          git push git@github.com:${{ github.repository }} gh-pages --force
+
+      - name: Clean up SSH
+        run: |
+          rm -f ~/.ssh/id_rsa
+          rm -f ~/.ssh/known_hosts
