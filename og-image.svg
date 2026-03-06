@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a1a" />
+  
+  <!-- Border / Accent -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#c5a059" stroke-width="4" />
+  <rect x="60" y="60" width="1080" height="510" fill="none" stroke="#c5a059" stroke-width="1" />
+  
+  <!-- Main Title -->
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="96" fill="#c5a059" letter-spacing="12">
+    SPADOK
+  </text>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="400" font-size="64" fill="#ffffff" letter-spacing="24">
+    HOTEL
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="400" font-size="32" fill="#e0e0e0">
+    Затишок. Автономність. Історія.
+  </text>
+  
+  <!-- Bottom Branding -->
+  <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="300" font-size="24" fill="#c5a059" opacity="0.8">
+    spadok.itkamianets.com
+  </text>
+</svg>
