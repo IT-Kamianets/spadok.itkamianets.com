@@ -1,112 +1,165 @@
 .contacts-page {
-  padding: 4rem 20px;
+  padding: 80px 20px 60px; /* Оптимізовані відступи */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.page-header {
+.contacts-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.page-header h1 {
-  color: var(--primary-color);
+.contacts-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.contacts-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background-color: var(--header-bg);
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.info-block {
-  margin-bottom: 2rem;
-}
-
-.info-block h3 {
   color: var(--primary-color);
   margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.info-block p, .info-block a {
+.header-divider {
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.contacts-header p {
+  font-size: 1rem;
   color: var(--text-color);
-  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.info-block a:hover {
-  text-decoration: underline;
-  color: var(--primary-color);
+.contacts-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 
-.contact-form-container h3 {
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
-}
-
-.contact-form {
+/* Info Cards */
+.info-section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.form-group {
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background: var(--header-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: rgba(197, 160, 89, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.card-text h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.card-text p, .card-text a {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* Form Container */
+.form-container {
+  background: var(--header-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.form-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.styled-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.form-group label {
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: inherit;
-  background-color: var(--bg-color);
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: var(--bg-color);
   color: var(--text-color);
-  transition: border-color 0.3s;
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-sizing: border-box;
 }
 
-[data-theme='dark'] .form-group input,
-[data-theme='dark'] .form-group textarea {
-  border-color: #444;
+[data-theme='dark'] .input-group input,
+[data-theme='dark'] .input-group textarea {
+  border-color: rgba(255,255,255,0.1);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
-.btn-primary {
-  padding: 12px;
-  background-color: var(--primary-color);
+.submit-btn {
+  background: linear-gradient(135deg, #d4af37 0%, #c5a059 100%);
   color: white;
+  padding: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
+  margin-top: 0.5rem;
 }
 
-.btn-primary:hover {
-  background-color: #a8874a;
-}
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .contacts-content {
+  .contacts-page {
+    padding: 40px 15px 120px; /* Зменшено верхній відступ, збільшено нижній */
+  }
+
+  .contacts-header {
+    margin-bottom: 2rem;
+  }
+
+  .contacts-header h1 {
+    font-size: 2rem;
+  }
+
+  .contacts-wrapper {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-container {
     padding: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 1rem;
   }
 }

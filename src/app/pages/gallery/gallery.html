@@ -1,18 +1,44 @@
 <div class="gallery-page container">
   <div class="page-header animate-up">
-    <h1>Галерея</h1>
-    <p>Погляньте на Spadok Hotel зблизька.</p>
+    <h1>{{ ls.t.galleryPage.title }}</h1>
+    <p>{{ ls.t.galleryPage.subtitle }}</p>
   </div>
 
   <div class="gallery-grid">
-    <div class="gallery-item animate-zoom" 
-         *ngFor="let img of images; let i = index"
-         [style.animation-delay]="(i * 0.1) + 's'">
-      <div class="img-placeholder">
-        <span class="icon">{{ img.icon }}</span>
+    <div class="gallery-item animate-up" 
+         *ngFor="let photo of ls.t.galleryPage.photos; let i = index"
+         [style.animation-delay]="(i * 0.1) + 's'"
+         (click)="openGallery(i)">
+      <img [src]="photo" alt="Gallery image">
+      <div class="gallery-overlay">
+        <span class="zoom-icon">🔍</span>
       </div>
-      <div class="img-overlay">
-        <span>{{ img.title }}</span>
+    </div>
+  </div>
+
+  <!-- MODERN LIGHTBOX -->
+  <div class="lightbox" *ngIf="isGalleryOpen" (click)="closeGallery()">
+    <button class="close-btn" (click)="closeGallery()">✕</button>
+    
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="nav-btn prev" (click)="prevPhoto($event)">‹</button>
+      
+      <div class="main-image-container">
+        <img [src]="ls.t.galleryPage.photos[currentPhotoIndex]" alt="Gallery Main" class="main-image">
+      </div>
+
+      <button class="nav-btn next" (click)="nextPhoto($event)">›</button>
+    </div>
+
+    <div class="lightbox-bottom" (click)="$event.stopPropagation()">
+      <div class="image-counter">{{ currentPhotoIndex + 1 }} / {{ ls.t.galleryPage.photos.length }}</div>
+      <div class="thumbnail-bar">
+        <div class="thumbnail" 
+             *ngFor="let img of ls.t.galleryPage.photos; let idx = index"
+             [class.active]="idx === currentPhotoIndex"
+             (click)="setPhotoIndex(idx)">
+          <img [src]="img" alt="Thumb">
+        </div>
       </div>
     </div>
   </div>

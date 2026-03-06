@@ -8,8 +8,16 @@
     <div class="room-card animate-up" 
          *ngFor="let room of ls.t.roomsPage.list; let i = index" 
          [style.animation-delay]="(i * 0.2) + 's'">
-      <div class="room-image-placeholder">
-        <span class="icon">🛏️</span>
+      <div class="room-image" (click)="openGallery(room)">
+        <img [src]="room.image" [alt]="room.name" *ngIf="room.image; else placeholder">
+        <div class="image-overlay">
+          <span class="zoom-icon">🔍</span>
+        </div>
+        <ng-template #placeholder>
+          <div class="room-image-placeholder">
+            <span class="icon">🛏️</span>
+          </div>
+        </ng-template>
       </div>
       <div class="room-details">
         <h2>{{ room.name }}</h2>
@@ -21,8 +29,40 @@
             <li *ngFor="let feature of room.features">✓ {{ feature }}</li>
           </ul>
         </div>
+
+        <div class="room-price">
+          <span class="price-label">{{ ls.t.roomsPage.priceLabel }}</span>
+          <span class="price-value">{{ room.price }}</span>
+        </div>
         
         <a routerLink="/contacts" class="btn btn-primary">{{ ls.t.roomsPage.bookBtn }}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODERN LIGHTBOX -->
+  <div class="lightbox" *ngIf="isGalleryOpen" (click)="closeGallery()">
+    <button class="close-btn" (click)="closeGallery()">✕</button>
+    
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="nav-btn prev" (click)="prevPhoto($event)" *ngIf="currentRoom?.images?.length > 1">‹</button>
+      
+      <div class="main-image-container">
+        <img [src]="currentRoom.images[currentPhotoIndex]" [alt]="currentRoom.name" class="main-image">
+      </div>
+
+      <button class="nav-btn next" (click)="nextPhoto($event)" *ngIf="currentRoom?.images?.length > 1">›</button>
+    </div>
+
+    <div class="lightbox-bottom" (click)="$event.stopPropagation()" *ngIf="currentRoom?.images?.length > 1">
+      <div class="image-counter">{{ currentPhotoIndex + 1 }} / {{ currentRoom.images.length }}</div>
+      <div class="thumbnail-bar">
+        <div class="thumbnail" 
+             *ngFor="let img of currentRoom.images; let idx = index"
+             [class.active]="idx === currentPhotoIndex"
+             (click)="setPhotoIndex(idx)">
+          <img [src]="img" alt="Thumb">
+        </div>
       </div>
     </div>
   </div>

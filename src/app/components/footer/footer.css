@@ -45,12 +45,12 @@
 
 .footer-map {
   flex: 1;
-  min-width: 300px; /* Мінімальна ширина для карти */
+  min-width: 250px; /* Reduced from 300px */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--primary-color);
-  height: 200px;
+  height: 160px; /* Reduced from 200px */
 }
 
 .footer-bottom {

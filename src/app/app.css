@@ -12,61 +12,38 @@
 
 .main-content {
   flex: 1;
+  width: 100%;
+  position: relative;
 }
 
 /* Floating Booking Button */
 .floating-book-btn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 100px; /* Above Bottom Nav */
+  right: 25px;
   background-color: var(--primary-color);
   color: white;
-  padding: 14px 28px;
-  border-radius: 50px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
   z-index: 1001;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: pulse 2.5s infinite, slideIn 0.8s ease-out;
 }
 
 .floating-book-btn:hover {
-  transform: scale(1.1) translateY(-8px);
-  background-color: #a8874a;
+  transform: scale(1.1) translateY(-5px);
 }
 
-.btn-icon { font-size: 1.4rem; }
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.6); }
-  70% { box-shadow: 0 0 0 20px rgba(197, 160, 89, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
-}
-
-@keyframes slideIn {
-  from { transform: translateX(100px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
+.btn-icon { font-size: 1.5rem; }
+.btn-text { display: none; }
 
 @media (max-width: 768px) {
   .app-wrapper {
-    padding-bottom: 60px; /* Місце для Bottom Nav */
+    padding-bottom: 90px; /* Safe area for Floating Nav */
   }
-}
-
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-  .floating-book-btn {
-    bottom: 100px; /* Піднімаємо вище над панеллю навігації */
-    right: 20px;
-    padding: 12px;
-    border-radius: 50%;
-  }
-  
-  .btn-text { display: none; }
-  .btn-icon { font-size: 1.6rem; }
 }

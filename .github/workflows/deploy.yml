@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base-href /
 
       - name: Add .nojekyll
         run: touch dist/Spadok/browser/.nojekyll
@@ -38,3 +38,4 @@ jobs:
         with:
           folder: dist/Spadok/browser
           branch: gh-pages
+          cname: spadok.itkamianets.com

@@ -40,6 +40,7 @@ export class LanguageService {
         title: 'Наші Номери',
         subtitle: 'Оберіть ідеальний варіант для вашого перебування у Кам\'янці-Подільському.',
         featuresLabel: 'Зручності:',
+        priceLabel: 'від',
         bookBtn: 'Забронювати',
         amenitiesTitle: 'Спільні зручності для всіх гостей',
         am1: '⚡ Безперебійне електропостачання',
@@ -48,21 +49,43 @@ export class LanguageService {
         am4: '☕ Набір для чаю/кави',
         list: [
           {
-            name: 'Двомісний номер Делюкс',
-            description: 'Просторий номер площею близько 32 м² з великим двоспальним ліжком. Ідеальний вибір для комфортного відпочинку для пар.',
-            features: ['Велике двоспальне ліжко', 'Власна ванна кімната', 'Телевізор з плоским екраном', 'Робочий стіл', 'Звукоізоляція']
+            name: 'Номер Делюкс з ліжком розміру "king-size"',
+            description: 'Просторий номер площею 26 кв. м з видом на пам\'ятку та місто. Включає велике двоспальне ліжко та всі необхідні зручності для комфортного відпочинку.',
+            features: ['Ліжко "king-size"', 'Площа 26 кв. м', 'Вид на місто/пам\'ятку', 'Власна ванна кімната', 'Звукоізоляція'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-king/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10].map(n => `/rooms/deluxe-king/${n}.png`)
+          },
+          {
+            name: 'Двомісний номер Делюкс з душем',
+            description: 'Затишний номер площею 32 кв. м з видом на сад, місто або внутрішній двір. Оснащений кондиціонером та особливо широким двоспальним ліжком.',
+            features: ['Особливо широке двоспальне ліжко', 'Площа 32 кв. м', 'Кондиціонер', 'Вид на сад/місто', 'Власна ванна кімната'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-double-shower/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11].map(n => `/rooms/deluxe-double-shower/${n}.png`)
+          },
+          {
+            name: 'Люкс з ліжком розміру "king-size"',
+            description: 'Розкішний люкс площею 33 кв. м з окремим входом. Має диван-ліжко та велике двоспальне ліжко, ідеально підходить для підвищеного комфорту.',
+            features: ['Ліжко "king-size" + диван-ліжко', 'Площа 33 кв. м', 'Кондиціонер', 'Вид на пам\'ятки', 'Халат та капці'],
+            price: '1 840 UAH',
+            image: '/rooms/king-suite/1.png',
+            images: [1,2,3,4,5,6,7,9,10,11,12].map(n => `/rooms/king-suite/${n}.png`)
           },
           {
             name: 'Сімейний номер Делюкс',
-            description: 'Великий номер площею 65 м², спеціально розрахований на комфортне проживання сім\'ї з 3-4 осіб. Достатньо місця для всіх.',
-            features: ['Кілька ліжок / диван', 'Власна ванна кімната', 'Телевізор', 'Холодильник', 'Зона відпочинку']
-          },
-          {
-            name: 'Номер «Люкс» (Suite)',
-            description: 'Покращений номер підвищеного комфорту з окремою вітальнею зоною. Забезпечує чудовий вид на сад або місто.',
-            features: ['Окрема зона відпочинку', 'Преміум вид з вікна', 'Власна ванна кімната', 'Халати та тапочки', 'Чайник та кавоварка']
+            description: 'Наш найбільший номер площею 65 кв. м. Розрахований на велику компанію або сім\'ю. Включає особливо широке двоспальне ліжко та два диван-ліжка.',
+            features: ['Площа 65 кв. м', 'Двоспальне ліжко + 2 диван-ліжка', 'Кондиціонер', 'Холодильник', 'Звукоізоляція'],
+            price: '2 100 UAH',
+            image: '/rooms/deluxe-family/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11,12,13].map(n => `/rooms/deluxe-family/${n}.png`)
           }
         ]
+      },
+      galleryPage: {
+        title: 'Галерея',
+        subtitle: 'Пориньте в атмосферу Spadok Hotel та Старого міста.',
+        photos: [1,2,3,4,5,6,7,8,9].map(n => `/gallery/${n}.png`)
       },
       footer: { address: 'вул. Домініканська, 2, Кам\'янець-Подільський', copyright: 'Всі права захищені.' }
     },
@@ -96,6 +119,7 @@ export class LanguageService {
         title: 'Our Rooms',
         subtitle: 'Choose the perfect option for your stay in Kamianets-Podilskyi.',
         featuresLabel: 'Amenities:',
+        priceLabel: 'from',
         bookBtn: 'Book Now',
         amenitiesTitle: 'Shared amenities for all guests',
         am1: '⚡ Uninterrupted power supply',
@@ -104,21 +128,43 @@ export class LanguageService {
         am4: '☕ Tea/Coffee maker',
         list: [
           {
-            name: 'Deluxe Double Room',
-            description: 'Spacious room of about 32 m² with a large double bed. Perfect choice for a comfortable stay for couples.',
-            features: ['Large double bed', 'Private bathroom', 'Flat-screen TV', 'Desk', 'Soundproofing']
+            name: 'Deluxe King Room',
+            description: 'Spacious 26 sq. m room with landmark and city views. Features a king-size bed and all necessary amenities for a comfortable stay.',
+            features: ['King-size bed', 'Area 26 sq. m', 'Landmark/City view', 'Private bathroom', 'Soundproofing'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-king/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10].map(n => `/rooms/deluxe-king/${n}.png`)
+          },
+          {
+            name: 'Deluxe Double Room with Shower',
+            description: 'Cozy 32 sq. m room with views of the garden, city, or courtyard. Equipped with air conditioning and an extra-wide double bed.',
+            features: ['Extra-wide double bed', 'Area 32 sq. m', 'Air conditioning', 'Garden/City view', 'Private bathroom'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-double-shower/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11].map(n => `/rooms/deluxe-double-shower/${n}.png`)
+          },
+          {
+            name: 'King Suite',
+            description: 'Luxurious 33 sq. m suite with a private entrance. Features a sofa bed and a king-size bed, ideal for enhanced comfort.',
+            features: ['King-size bed + sofa bed', 'Area 33 sq. m', 'Air conditioning', 'Landmark view', 'Bathrobes & slippers'],
+            price: '1 840 UAH',
+            image: '/rooms/king-suite/1.png',
+            images: [1,2,3,4,5,6,7,9,10,11,12].map(n => `/rooms/king-suite/${n}.png`)
           },
           {
             name: 'Deluxe Family Room',
-            description: 'Large 65 m² room, specially designed for a comfortable stay of a family of 3-4 people. Plenty of space for everyone.',
-            features: ['Multiple beds / sofa', 'Private bathroom', 'TV', 'Refrigerator', 'Seating area']
-          },
-          {
-            name: 'Suite',
-            description: 'Upgraded superior room with a separate living area. Provides a beautiful view of the garden or the city.',
-            features: ['Separate seating area', 'Premium view', 'Private bathroom', 'Bathrobes and slippers', 'Tea/Coffee maker']
+            description: 'Our largest room (65 sq. m). Designed for large groups or families. Includes an extra-wide double bed and two sofa beds.',
+            features: ['Area 65 sq. m', 'Double bed + 2 sofa beds', 'Air conditioning', 'Refrigerator', 'Soundproofing'],
+            price: '2 100 UAH',
+            image: '/rooms/deluxe-family/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11,12,13].map(n => `/rooms/deluxe-family/${n}.png`)
           }
         ]
+      },
+      galleryPage: {
+        title: 'Gallery',
+        subtitle: 'Immerse yourself in the atmosphere of Spadok Hotel and the Old Town.',
+        photos: [1,2,3,4,5,6,7,8,9].map(n => `/gallery/${n}.png`)
       },
       footer: { address: '2 Dominicanska St, Kamianets-Podilskyi', copyright: 'All rights reserved.' }
     },
@@ -152,6 +198,7 @@ export class LanguageService {
         title: 'Nasze Pokoje',
         subtitle: 'Wybierz idealną opcję na swój pobyt w Kamieńcu Podolskim.',
         featuresLabel: 'Udogodnienia:',
+        priceLabel: 'od',
         bookBtn: 'Zarezerwuj',
         amenitiesTitle: 'Wspólne udogodnienia dla wszystkich gości',
         am1: '⚡ Nieprzerwane zasilanie',
@@ -160,21 +207,43 @@ export class LanguageService {
         am4: '☕ Zestaw do parzenia kawy/herbaty',
         list: [
           {
-            name: 'Pokój Dwuosobowy typu Deluxe',
-            description: 'Przestronny pokój o powierzchni ok. 32 m² z dużym łóżkiem podwójnym. Idealny wybór na komfortowy pobyt dla par.',
-            features: ['Duże łóżko podwójne', 'Prywatna łazienka', 'Telewizor z płaskim ekranem', 'Biurko', 'Dźwiękoszczelność']
+            name: 'Pokój Deluxe z łóżkiem typu King-size',
+            description: 'Przestronny pokój o powierzchni 26 m² z widokiem na zabytki i miasto. Zawiera duże łóżko podwójне.',
+            features: ['Łóżko King-size', 'Powierzchnia 26 m²', 'Widok na miasto', 'Prywatna łazienka', 'Dźwiękoszczelność'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-king/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10].map(n => `/rooms/deluxe-king/${n}.png`)
           },
           {
-            name: 'Rodzinny Pokój typu Deluxe',
-            description: 'Duży pokój o powierzchni 65 m², specjalnie zaprojektowany dla 3-4 osobowej rodziny. Dużo miejsca dla wszystkich.',
-            features: ['Wiele łóżek / sofa', 'Prywatna łazienka', 'Telewizor', 'Lodówka', 'Część wypoczynkowa']
+            name: 'Pokój Dwuosobowy Deluxe z prysznicem',
+            description: 'Przytulny pokój o powierzchni 32 m² z widokiem na ogród lub miasto. Wyposażony в klimatyzację.',
+            features: ['Szerokie łóżko подwójне', 'Powierzchnia 32 m²', 'Klimatyzacja', 'Widok na ogród', 'Prywatna łazienka'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-double-shower/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11].map(n => `/rooms/deluxe-double-shower/${n}.png`)
           },
           {
-            name: 'Apartament (Suite)',
-            description: 'Pokój o podwyższonym standardzie z oddzielną częścią dzienną. Zapewnia piękny widok na ogród lub miasto.',
-            features: ['Oddzielna część wypoczynkowa', 'Widok Premium', 'Prywatna łazienka', 'Szlafroki i kapcie', 'Zestaw do kawy']
+            name: 'Apartament typu Suite z łóżkiem King-size',
+            description: 'Luksusowy apartament o powierzchni 33 m² з osobnym wejściem i sofą.',
+            features: ['Łóżko King-size + sofa', 'Powierzchnia 33 m²', 'Klimatyzacja', 'Widok na zabytki', 'Szlafroki'],
+            price: '1 840 UAH',
+            image: '/rooms/king-suite/1.png',
+            images: [1,2,3,4,5,6,7,9,10,11,12].map(n => `/rooms/king-suite/${n}.png`)
+          },
+          {
+            name: 'Rodzinny pokój Deluxe',
+            description: 'Nasz największy pokój (65 m²) dla rodzin lub grup. Zawiera szerokie łóżko i dwie sofy.',
+            features: ['Powierzchnia 65 m²', 'Łóżko + 2 sofy', 'Klimatyzacja', 'Lodówka', 'Dźwiękoszczelność'],
+            price: '2 100 UAH',
+            image: '/rooms/deluxe-family/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11,12,13].map(n => `/rooms/deluxe-family/${n}.png`)
           }
         ]
+      },
+      galleryPage: {
+        title: 'Galeria',
+        subtitle: 'Zanurz się w atmosferze hotelu Spadok i Starego Miasta.',
+        photos: [1,2,3,4,5,6,7,8,9].map(n => `/gallery/${n}.png`)
       },
       footer: { address: 'ul. Dominikańska 2, Kamieniec Podolski', copyright: 'Wszelkie prawa zastrzeżone.' }
     },
@@ -208,6 +277,7 @@ export class LanguageService {
         title: 'Unsere Zimmer',
         subtitle: 'Wählen Sie die perfekte Option für Ihren Aufenthalt in Kamjanez-Podilskyj.',
         featuresLabel: 'Ausstattung:',
+        priceLabel: 'ab',
         bookBtn: 'Buchen',
         amenitiesTitle: 'Gemeinsame Annehmlichkeiten',
         am1: '⚡ Unterbrechungsfreie Stromversorgung',
@@ -216,21 +286,43 @@ export class LanguageService {
         am4: '☕ Tee-/Kaffeekocher',
         list: [
           {
-            name: 'Deluxe Doppelzimmer',
-            description: 'Geräumiges Zimmer (ca. 32 m²) mit großem Doppelbett. Perfekte Wahl für einen komfortablen Aufenthalt für Paare.',
-            features: ['Großes Doppelbett', 'Eigenes Bad', 'Flachbild-TV', 'Schreibtisch', 'Schalldämmung']
+            name: 'Deluxe-Zimmer mit King-Size-Bett',
+            description: 'Geräumiges 26 m² Zimmer mit Blick auf die Stadt und Sehenswürdigkeiten. Inklusive King-Size-Bett.',
+            features: ['King-Size-Bett', '26 m² Fläche', 'Stadtblick', 'Eigenes Bad', 'Schalldämmung'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-king/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10].map(n => `/rooms/deluxe-king/${n}.png`)
+          },
+          {
+            name: 'Deluxe Doppelzimmer mit Dusche',
+            description: 'Gemütliches 32 m² Zimmer with Garten- oder Stadtblick. Ausgestattet mit Klimaanlage.',
+            features: ['Breites Doppelbett', '32 m² Fläche', 'Klimaanlage', 'Gartenblick', 'Eigenes Bad'],
+            price: '1 700 UAH',
+            image: '/rooms/deluxe-double-shower/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11].map(n => `/rooms/deluxe-double-shower/${n}.png`)
+          },
+          {
+            name: 'King Suite',
+            description: 'Luxuriöse 33 m² Suite mit separatem Eingang und Schlafsofa.',
+            features: ['King-Size-Bett + Sofa', '33 m² Fläche', 'Klimaanlage', 'Blick auf Sehenswürdigkeiten', 'Bademäntel'],
+            price: '1 840 UAH',
+            image: '/rooms/king-suite/1.png',
+            images: [1,2,3,4,5,6,7,9,10,11,12].map(n => `/rooms/king-suite/${n}.png`)
           },
           {
             name: 'Deluxe Familienzimmer',
-            description: 'Großes 65 m² Zimmer, speziell für einen komfortablen Aufenthalt einer 3-4-köpfigen Familie. Viel Platz für alle.',
-            features: ['Mehrere Betten / Sofa', 'Eigenes Bad', 'TV', 'Kühlschrank', 'Sitzecke']
-          },
-          {
-            name: 'Suite',
-            description: 'Verbessertes Superior-Zimmer mit separatem Wohnbereich. Bietet einen schönen Blick auf den Garten oder die Stadt.',
-            features: ['Separater Sitzbereich', 'Premium-Aussicht', 'Eigenes Bad', 'Bademäntel', 'Kaffeemaschine']
+            description: 'Unser größtes Zimmer (65 m²) für Familien oder Gruppen. Mit breitem Bett und zwei Schlafsofas.',
+            features: ['65 m² Fläche', 'Doppelbett + 2 Sofas', 'Klimaanlage', 'Kühlschrank', 'Schalldämmung'],
+            price: '2 100 UAH',
+            image: '/rooms/deluxe-family/1.png',
+            images: [1,2,3,4,5,6,7,8,9,10,11,12,13].map(n => `/rooms/deluxe-family/${n}.png`)
           }
         ]
+      },
+      galleryPage: {
+        title: 'Galerie',
+        subtitle: 'Tauchen Sie ein in die Atmosphäre des Spadok Hotels und der Altstadt.',
+        photos: [1,2,3,4,5,6,7,8,9].map(n => `/gallery/${n}.png`)
       },
       footer: { address: 'Dominikanska-Str. 2, Kamjanez-Podilskyj', copyright: 'Alle Rechte vorbehalten.' }
     }

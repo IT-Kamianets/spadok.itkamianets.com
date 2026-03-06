@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-gallery',
@@ -9,12 +10,44 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./gallery.css']
 })
 export class GalleryComponent {
-  images = [
-    { title: 'Екстер\'єр готелю', icon: '🏨' },
-    { title: 'Номер Делюкс', icon: '🛏️' },
-    { title: 'Ванна кімната', icon: '🛁' },
-    { title: 'Територія саду', icon: '🌳' },
-    { title: 'Зона барбекю', icon: '🔥' },
-    { title: 'Вид на Старе місто', icon: '🏰' }
-  ];
+  isGalleryOpen = false;
+  currentPhotoIndex = 0;
+
+  constructor(public ls: LanguageService) {}
+
+  openGallery(index: number) {
+    this.currentPhotoIndex = index;
+    this.isGalleryOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeGallery() {
+    this.isGalleryOpen = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  nextPhoto(event?: Event) {
+    if (event) event.stopPropagation();
+    const photos = this.ls.t.galleryPage.photos;
+    this.currentPhotoIndex = (this.currentPhotoIndex + 1) % photos.length;
+  }
+
+  prevPhoto(event?: Event) {
+    if (event) event.stopPropagation();
+    const photos = this.ls.t.galleryPage.photos;
+    this.currentPhotoIndex = (this.currentPhotoIndex - 1 + photos.length) % photos.length;
+  }
+
+  setPhotoIndex(index: number) {
+    this.currentPhotoIndex = index;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (this.isGalleryOpen) {
+      if (event.key === 'Escape') this.closeGallery();
+      if (event.key === 'ArrowRight') this.nextPhoto();
+      if (event.key === 'ArrowLeft') this.prevPhoto();
+    }
+  }
 }

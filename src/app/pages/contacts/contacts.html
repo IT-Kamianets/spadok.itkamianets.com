@@ -1,44 +1,55 @@
 <div class="contacts-page container">
-  <div class="page-header animate-up">
+  <header class="contacts-header animate-up">
     <h1>Контакти</h1>
-    <p>Ми на зв'язку 24/7 для вашого комфорту.</p>
-  </div>
+    <div class="header-divider"></div>
+    <p>Ми завжди раді допомогти вам з бронюванням або відповісти на будь-які запитання.</p>
+  </header>
 
-  <div class="contacts-content">
-    <div class="contact-info animate-left delay-1">
-      <div class="info-block">
-        <h3>📍 Адреса</h3>
-        <p>вул. Домініканська, 2, Кам'янець-Подільський</p>
+  <div class="contacts-wrapper">
+    <!-- Блок інформації -->
+    <section class="info-section animate-up delay-1">
+      <div class="contact-card">
+        <div class="card-icon">📍</div>
+        <div class="card-text">
+          <h3>Адреса</h3>
+          <p>вул. Домініканська, 2, Кам'янець-Подільський, Україна</p>
+        </div>
       </div>
 
-      <div class="info-block">
-        <h3>📞 Телефони</h3>
-        <p><a href="tel:+380675435074">+38 (067) 543-50-74</a></p>
+      <div class="contact-card">
+        <div class="card-icon">📞</div>
+        <div class="card-text">
+          <h3>Телефони</h3>
+          <p><a href="tel:+380675435074">+38 (067) 543-50-74</a></p>
+        </div>
       </div>
 
-      <div class="info-block">
-        <h3>✉️ Email</h3>
-        <p><a href="mailto:info@spadok-hotel.com.ua">info@spadok-hotel.com.ua</a></p>
+      <div class="contact-card">
+        <div class="card-icon">✉️</div>
+        <div class="card-text">
+          <h3>Email</h3>
+          <p><a href="mailto:info@spadok-hotel.com.ua">info@spadok-hotel.com.ua</a></p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="contact-form-container animate-right delay-1">
-      <h3>Напишіть нам</h3>
-      <form class="contact-form" (submit)="$event.preventDefault()">
-        <div class="form-group animate-up delay-2">
-          <label for="name">Ваше ім'я</label>
-          <input type="text" id="name" placeholder="Іван Іванов" required>
-        </div>
-        <div class="form-group animate-up delay-3">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="ivan@example.com" required>
-        </div>
-        <div class="form-group animate-up delay-4">
-          <label for="message">Повідомлення</label>
-          <textarea id="message" rows="5" placeholder="Ваше повідомлення..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary animate-up delay-5">Відправити</button>
-      </form>
-    </div>
+    <!-- Блок форми -->
+    <section class="form-section animate-up delay-2">
+      <div class="form-container">
+        <h2>Напишіть нам</h2>
+        <form class="styled-form" (submit)="$event.preventDefault()">
+          <div class="input-group">
+            <input type="text" id="name" placeholder="Ваше ім'я" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="email" placeholder="Ваш Email" required>
+          </div>
+          <div class="input-group">
+            <textarea id="message" rows="4" placeholder="Ваше повідомлення..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Відправити повідомлення</button>
+        </form>
+      </div>
+    </section>
   </div>
 </div>
