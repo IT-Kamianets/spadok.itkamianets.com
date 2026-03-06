@@ -1,0 +1,363 @@
+.home-page {
+  padding-bottom: 6rem;
+}
+
+/* Typography & Titles */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 50vh; /* Зменшуємо з 75vh до 50vh */
+  min-height: 400px; /* Зменшуємо з 600px до 400px */
+  position: relative;
+  /* Фото затишного готельного номера або фасаду */
+  background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 6rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #a8874a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.6);
+}
+
+/* Stats Bar (Glassmorphism) */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* Ефект скла */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2.5rem;
+  border-radius: 16px;
+  margin-top: -10rem;
+  position: relative;
+  z-index: 20;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  color: white;
+}
+
+[data-theme='dark'] .stats-bar {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.stat-divider {
+  width: 2px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Info Grid (About) */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 8rem 0;
+  align-items: center;
+}
+
+.info-text h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.info-text p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.info-image {
+  height: 500px;
+  border-radius: 20px;
+  background: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') no-repeat center center / cover;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.info-image::after {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 24px;
+  z-index: -1;
+}
+
+/* Features */
+.features-section {
+  padding: 6rem 0;
+  text-align: center; /* Центрування всього вмісту секції */
+}
+
+.features-section .section-title {
+  display: block;
+  margin: 0 auto 4rem;
+  left: auto;
+  transform: none;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-card {
+  background-color: var(--header-bg);
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid transparent;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
+  border-color: var(--primary-color);
+}
+
+.f-icon {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover .f-icon {
+  transform: scale(1.25) rotate(10deg);
+  filter: drop-shadow(0 10px 15px rgba(197, 160, 89, 0.3));
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+/* Location Section */
+.location-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--header-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 8rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.location-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-content h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.location-list {
+  margin-top: 2rem;
+}
+
+.location-list li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-image {
+  /* Фото старовинного міста або замку */
+  background: url('https://images.unsplash.com/photo-1600504104279-3b60cdcc92e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') no-repeat center center / cover;
+  min-height: 400px;
+}
+
+/* Reviews */
+.reviews-section {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.reviews-section .section-title {
+  display: block;
+  margin: 0 auto 4rem;
+  left: auto;
+  transform: none;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: var(--header-bg);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left; /* Текст всередині відгуку залишаємо зліва */
+}
+
+.review-card::before {
+  content: '❝';
+  font-size: 6rem;
+  color: var(--primary-color);
+  opacity: 0.2;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: serif;
+}
+
+.stars {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.reviewer {
+  font-weight: bold;
+  color: var(--primary-color);
+  display: block;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .info-grid, .location-section {
+    grid-template-columns: 1fr;
+  }
+  .info-image { height: 350px; }
+  .location-image { height: 300px; order: -1; }
+  .stats-bar {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: -4rem;
+  }
+  .stat-divider {
+    width: 60px;
+    height: 2px;
+  }
+  .location-content {
+    padding: 2rem;
+  }
+}

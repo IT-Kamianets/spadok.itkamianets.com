@@ -1,0 +1,78 @@
+<div class="home-page">
+  <!-- Hero Section (Статична, без анімацій при кожному вході) -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>{{ ls.t.home.title }}</h1>
+      <p>{{ ls.t.home.subtitle }}</p>
+      <div class="hero-btns">
+        <a routerLink="/rooms" class="btn btn-primary">{{ ls.t.home.btnRooms }}</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- About Section -->
+    <section class="info-grid">
+      <div class="info-text animate-up">
+        <h2>{{ ls.t.home.aboutTitle }}</h2>
+        <p>{{ ls.t.home.aboutText1 }}</p>
+        <p><strong>{{ ls.t.home.aboutText2 }}</strong></p>
+      </div>
+      <div class="info-image animate-up delay-1"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+      <h2 class="section-title animate-up">{{ ls.t.home.featuresTitle }}</h2>
+      <div class="features-grid">
+        <div class="feature-card animate-up delay-1">
+          <div class="f-icon">🌿</div>
+          <h3>{{ ls.t.home.f1Title }}</h3>
+          <p>{{ ls.t.home.f1Desc }}</p>
+        </div>
+        <div class="feature-card animate-up delay-2">
+          <div class="f-icon">⚡</div>
+          <h3>{{ ls.t.home.f2Title }}</h3>
+          <p>{{ ls.t.home.f2Desc }}</p>
+        </div>
+        <div class="feature-card animate-up delay-3">
+          <div class="f-icon">🅿️</div>
+          <h3>{{ ls.t.home.f3Title }}</h3>
+          <p>{{ ls.t.home.f3Desc }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section animate-up">
+      <div class="location-content">
+        <h2>{{ ls.t.home.locationTitle }}</h2>
+        <p>{{ ls.t.home.locationDesc }}</p>
+        <ul class="location-list">
+          <li>🏰 {{ ls.t.home.loc1 }}</li>
+          <li>🏞️ {{ ls.t.home.loc2 }}</li>
+          <li>⛪ {{ ls.t.home.loc3 }}</li>
+        </ul>
+      </div>
+      <div class="location-image"></div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <h2 class="section-title animate-up">{{ ls.t.home.reviewsTitle }}</h2>
+      <div class="reviews-grid">
+        <div class="review-card animate-up delay-1">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>{{ ls.t.home.rev1 }}</p>
+          <span class="reviewer">— Booking.com Guest</span>
+        </div>
+        <div class="review-card animate-up delay-2">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>{{ ls.t.home.rev2 }}</p>
+          <span class="reviewer">— Google Maps Guest</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!-- Верхній Хедер -->
+<header class="site-header" [class.hidden]="isHeaderHidden">
+  <div class="container header-container">
+    <div class="logo">
+      <a routerLink="/" (click)="isLangMenuOpen = false">SPADOK <span>HOTEL</span></a>
+    </div>
+
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ ls.t.nav.home }}</a></li>
+        <li><a routerLink="/rooms" routerLinkActive="active">{{ ls.t.nav.rooms }}</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="active">{{ ls.t.nav.gallery }}</a></li>
+        <li><a routerLink="/contacts" routerLinkActive="active">{{ ls.t.nav.contacts }}</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-dropdown-wrapper">
+        <button class="action-btn lang-btn" (click)="toggleLangMenu()">
+          {{ ls.currentLang() | uppercase }}
+        </button>
+        <div class="lang-dropdown-list" [class.show]="isLangMenuOpen">
+          <button *ngFor="let l of ['ua', 'en', 'pl', 'de']" (click)="changeLang(l)" [class.active]="ls.currentLang() === l">
+            {{ l | uppercase }}
+          </button>
+        </div>
+      </div>
+      <button class="action-btn theme-btn" (click)="toggleTheme($event)" [class.dark-mode]="isDarkTheme">
+        <span class="icon-wrapper">
+          <svg *ngIf="!isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg *ngIf="isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Нижня Мобільна Навігація -->
+<nav class="nav-mobile">
+  <ul class="mobile-nav-list">
+    <!-- 0: Home -->
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mob-link">
+        <span class="mob-icon">🏠</span>
+        <span class="mob-text">{{ ls.t.nav.home }}</span>
+      </a>
+    </li>
+    <!-- 1: Rooms -->
+    <li>
+      <a routerLink="/rooms" routerLinkActive="active" class="mob-link">
+        <span class="mob-icon">🛏️</span>
+        <span class="mob-text">{{ ls.t.nav.rooms }}</span>
+      </a>
+    </li>
+    <!-- 2: Gallery -->
+    <li>
+      <a routerLink="/gallery" routerLinkActive="active" class="mob-link">
+        <span class="mob-icon">🖼️</span>
+        <span class="mob-text">{{ ls.t.nav.gallery }}</span>
+      </a>
+    </li>
+    <!-- 3: Contacts -->
+    <li>
+      <a routerLink="/contacts" routerLinkActive="active" class="mob-link">
+        <span class="mob-icon">📞</span>
+        <span class="mob-text">{{ ls.t.nav.contacts }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

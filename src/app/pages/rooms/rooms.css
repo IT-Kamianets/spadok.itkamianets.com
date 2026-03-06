@@ -1,0 +1,125 @@
+.rooms-page {
+  padding: 4rem 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.room-card {
+  background-color: var(--header-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-image-placeholder {
+  height: 200px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+[data-theme='dark'] .room-image-placeholder {
+  background-color: #333;
+}
+
+.room-details {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-details h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.room-description {
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.room-features h4 {
+  margin-bottom: 0.5rem;
+}
+
+.room-features ul {
+  margin-bottom: 1.5rem;
+}
+
+.room-features li {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover {
+  background-color: #a8874a;
+}
+
+.shared-amenities {
+  background-color: var(--header-bg);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.shared-amenities h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.amenities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.amenities-list li {
+  padding: 0.5rem;
+  background-color: var(--bg-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

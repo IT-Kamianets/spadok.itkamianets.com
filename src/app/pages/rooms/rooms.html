@@ -1,0 +1,39 @@
+<div class="rooms-page container">
+  <div class="page-header animate-up">
+    <h1>{{ ls.t.roomsPage.title }}</h1>
+    <p>{{ ls.t.roomsPage.subtitle }}</p>
+  </div>
+
+  <div class="rooms-grid">
+    <div class="room-card animate-up" 
+         *ngFor="let room of ls.t.roomsPage.list; let i = index" 
+         [style.animation-delay]="(i * 0.2) + 's'">
+      <div class="room-image-placeholder">
+        <span class="icon">🛏️</span>
+      </div>
+      <div class="room-details">
+        <h2>{{ room.name }}</h2>
+        <p class="room-description">{{ room.description }}</p>
+        
+        <div class="room-features">
+          <h4>{{ ls.t.roomsPage.featuresLabel }}</h4>
+          <ul>
+            <li *ngFor="let feature of room.features">✓ {{ feature }}</li>
+          </ul>
+        </div>
+        
+        <a routerLink="/contacts" class="btn btn-primary">{{ ls.t.roomsPage.bookBtn }}</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="shared-amenities animate-zoom delay-3">
+    <h2>{{ ls.t.roomsPage.amenitiesTitle }}</h2>
+    <ul class="amenities-list">
+      <li>{{ ls.t.roomsPage.am1 }}</li>
+      <li>{{ ls.t.roomsPage.am2 }}</li>
+      <li>{{ ls.t.roomsPage.am3 }}</li>
+      <li>{{ ls.t.roomsPage.am4 }}</li>
+    </ul>
+  </section>
+</div>

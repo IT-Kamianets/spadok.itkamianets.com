@@ -1,0 +1,81 @@
+.site-footer {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap; /* Дозволяємо перенос на нову лінію */
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 300px; /* Мінімальна ширина для інфо-блоку */
+}
+
+.footer-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.footer-info p {
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.footer-info a {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.footer-info a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.footer-map {
+  flex: 1;
+  min-width: 300px; /* Мінімальна ширина для карти */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary-color);
+  height: 200px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(197, 160, 89, 0.1);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .footer-info, .footer-map {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .footer-info h3 {
+    font-size: 1.5rem;
+  }
+}

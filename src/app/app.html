@@ -1,0 +1,15 @@
+<div class="app-wrapper">
+  <app-header></app-header>
+  
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  
+  <app-footer></app-footer>
+
+  <!-- Floating Booking Button -->
+  <a *ngIf="!isContactsPage" routerLink="/contacts" class="floating-book-btn" title="Забронювати зараз">
+    <span class="btn-icon">📅</span>
+    <span class="btn-text">Забронювати</span>
+  </a>
+</div>

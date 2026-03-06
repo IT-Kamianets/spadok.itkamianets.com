@@ -1,0 +1,19 @@
+<div class="gallery-page container">
+  <div class="page-header animate-up">
+    <h1>Галерея</h1>
+    <p>Погляньте на Spadok Hotel зблизька.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item animate-zoom" 
+         *ngFor="let img of images; let i = index"
+         [style.animation-delay]="(i * 0.1) + 's'">
+      <div class="img-placeholder">
+        <span class="icon">{{ img.icon }}</span>
+      </div>
+      <div class="img-overlay">
+        <span>{{ img.title }}</span>
+      </div>
+    </div>
+  </div>
+</div>

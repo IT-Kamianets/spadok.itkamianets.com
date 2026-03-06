@@ -1,0 +1,44 @@
+<div class="contacts-page container">
+  <div class="page-header animate-up">
+    <h1>Контакти</h1>
+    <p>Ми на зв'язку 24/7 для вашого комфорту.</p>
+  </div>
+
+  <div class="contacts-content">
+    <div class="contact-info animate-left delay-1">
+      <div class="info-block">
+        <h3>📍 Адреса</h3>
+        <p>вул. Домініканська, 2, Кам'янець-Подільський</p>
+      </div>
+
+      <div class="info-block">
+        <h3>📞 Телефони</h3>
+        <p><a href="tel:+380675435074">+38 (067) 543-50-74</a></p>
+      </div>
+
+      <div class="info-block">
+        <h3>✉️ Email</h3>
+        <p><a href="mailto:info@spadok-hotel.com.ua">info@spadok-hotel.com.ua</a></p>
+      </div>
+    </div>
+
+    <div class="contact-form-container animate-right delay-1">
+      <h3>Напишіть нам</h3>
+      <form class="contact-form" (submit)="$event.preventDefault()">
+        <div class="form-group animate-up delay-2">
+          <label for="name">Ваше ім'я</label>
+          <input type="text" id="name" placeholder="Іван Іванов" required>
+        </div>
+        <div class="form-group animate-up delay-3">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="ivan@example.com" required>
+        </div>
+        <div class="form-group animate-up delay-4">
+          <label for="message">Повідомлення</label>
+          <textarea id="message" rows="5" placeholder="Ваше повідомлення..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary animate-up delay-5">Відправити</button>
+      </form>
+    </div>
+  </div>
+</div>
